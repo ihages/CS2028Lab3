@@ -3,7 +3,8 @@
 
 int main() {
 	std::cout << "When running the function with no parameters," << std::endl;
-	Design::Design().print();
+	Design d1;
+	d1.print();
 
 	/*****
 	* changes after implementation to design.h: 
@@ -20,18 +21,43 @@ int main() {
 	std::cin >> lotInput;
 	std::cin >> heapInput;
 
-	Design::Design(littleInput, lotInput, heapInput).print();
-
+	std::cout << "d2:" << std::endl;
+	Design d2(littleInput, lotInput, heapInput);
+	d2.print();
+	/*
 	littleInput = 0;
 	lotInput = 0;
 	heapInput = 0;
     
     std::cout << "Enter the number of littles: " << std::endl;
 	std::cin >> littleInput;
+	*/
+	std::cout << "d3:" << std::endl;
+	Design d3(littleInput+1,lotInput,heapInput+1);
+	d3.print();
 
-	Design::Design(littleInput).print();
+	std::cout << "Adding d2 and d3" << std::endl;
+	Design d4 = d2 + d3;
+	d4.print();
 
+	std::cout << "Subtacting d2 and d3" << std::endl;
+	d4 = d2 - d3;
+	d4.print();
 
+	std::cout << "Multiplying d2 and d3" << std::endl;
+	d4 = d2 * d3;
+	d4.print();
+
+	std::cout << "Dividing d2 and d3" << std::endl;
+	d4 = d3 / d2;
+	d4.print();
+
+	std::cout << "Comparing d2 and d3" << std::endl;
+	std::cout << (d2 == d3) << std::endl;
+
+	//std::cout << "Coverting d2 to a string" << std::endl;
+	//std::cout << d2 << std::endl;
+	
 
     return 0;
 } // main closer

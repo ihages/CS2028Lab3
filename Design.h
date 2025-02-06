@@ -1,5 +1,9 @@
 #pragma once
 
+#ifndef _DESIGN_HPP
+#define _DESIGN_HPP
+
+
 #include <iostream>
 #include <string>
 
@@ -64,12 +68,16 @@ public:
 		std::cout << "Heaps: " << heap << std::endl;
 	}
 
+	//Operator Overloads
 	Design operator+(Design right);
 	Design operator-(Design right);
 	Design operator*(Design right);
 	Design operator/(Design right);
 	bool operator==(Design right);
 	std::string operator<<(Design right);
+
+	//functions
+	Design condense(Design &input);
 };
 
 
@@ -82,3 +90,5 @@ Design(double);
 void  Design::print() const
 */
 // little.print()
+
+#endif
