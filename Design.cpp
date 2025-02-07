@@ -6,31 +6,27 @@ void Design::operator+(const Design &right){
     this->little += right.little;
     this->lot += right.lot;
     this->heap += right.heap;
-    Design result(*this);
-    result.condense(result);
+    (*this).condense(*this);
 }
 
 void Design::operator-(const Design &right){
     this->little -= right.little;
     this->lot -= right.lot;
     this->heap -= right.heap;
-    Design result(*this);
-    result.condense(result);
+    (*this).condense(*this);
 }
 void Design::operator*(const Design &right) {
     this->little *= right.little;
     this->lot *= right.lot;
     this->heap *= right.heap;
-    Design result(*this);
-    result.condense(result);
+    (*this).condense(*this);
 }
 
 void Design::operator/(const Design &right) {
     this->little /= right.little;
     this->lot /= right.lot;
     this->heap /= right.heap;
-    Design result(*this);
-    result.condense(result);
+    (*this).condense(*this);
 }
 
 bool Design::operator==(const Design &right) {
@@ -40,7 +36,7 @@ bool Design::operator==(const Design &right) {
         return false;
     }
 }
-
+/*
 std::string Design::operator<<(Design right) {
     return toString(right);
 }
@@ -49,19 +45,29 @@ std::string Design::operator<<(Design right) {
 void Design::condense(Design &input){
     if (input.little >= 7) {
         input.lot += input.little / 7;
-        input.little /= 7;
+        input.little %= 7;
     }
     if (input.lot >= 23) {
         input.heap += input.lot / 23;
-        input.lot /= 23;
+        input.lot %= 23;
     }
-    if (input.little < 0) {
-        input.lot -= 1;
-        input.little += 7;
+    while (input.little < 0) {
+        if (input.lot > 0){
+            input.lot -= 1;
+            input.little += 7;
+        }
+        else {
+            break;
+        }
     }
-    if (input.lot < 0) {
-        input.heap -= 1;
-        input.lot += 23;
+    while (input.lot < 0) {
+        if (input.heap > 0){
+            input.heap -= 1;
+            input.lot += 23;
+        }
+        else {
+            break;
+        }
     }
 }
 

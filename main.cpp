@@ -39,8 +39,6 @@ int main() {
 	Design d3(littleInput+1,lotInput,heapInput+1);
 	d3.print();
 
-
-	
 	std::cout << "Adding d2 and d3" << std::endl;
 	d2 + d3;
 	d2.print();
