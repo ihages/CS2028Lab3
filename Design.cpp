@@ -2,43 +2,27 @@
 #include <iostream>
 #include <string>
 
-Design Design::operator+(Design right){
-    Design tempDesign;
-    tempDesign.little = little + right.little;
-    tempDesign.lot = lot + right.lot;
-    tempDesign.heap = heap + right.heap;
-
-    //condense(tempDesign);
-    return tempDesign;
+void Design::operator+(Design right){
+    this->little += right.little;
+    this->lot += right.lot;
+    this->heap += right.heap;
 }
 
-Design Design::operator-(Design right){
-    Design tempDesign;
-    tempDesign.little = little - right.little;
-    tempDesign.lot = lot - right.lot;
-    tempDesign.heap = heap - right.heap;
-
-    //condense(tempDesign);
-    return tempDesign;
+void Design::operator-(Design right){
+    this->little -= right.little;
+    this->lot -= right.lot;
+    this->heap -= right.heap;
 }
-Design Design::operator*(Design right) {
-    Design tempDesign;
-    tempDesign.little = little * right.little;
-    tempDesign.lot = lot * right.lot;
-    tempDesign.heap = heap * right.heap;
-
-    //condense(tempDesign);
-    return tempDesign;
+void Design::operator*(Design right) {
+    this->little *= right.little;
+    this->lot *= right.lot;
+    this->heap *= right.heap;
 }
 
-Design Design::operator/(Design right) {
-    Design tempDesign;
-    tempDesign.little = little / right.little;
-    tempDesign.lot = lot / right.lot;
-    tempDesign.heap = heap / right.heap;
-
-    //condense(tempDesign);
-    return tempDesign;
+void Design::operator/(Design right) {
+    this->little /= right.little;
+    this->lot /= right.lot;
+    this->heap /= right.heap;
 }
 
 bool Design::operator==(Design right) {
@@ -48,7 +32,7 @@ bool Design::operator==(Design right) {
         return false;
     }
 }
-
+/*
 std::string Design::operator<<(Design right) {
     if (little == right.little) {
         return std::to_string(little);
@@ -61,6 +45,7 @@ std::string Design::operator<<(Design right) {
     }
     return ("");
 }
+*/
 
 Design Design::condense(Design &input){
     if (input.little >= 7) {
@@ -80,4 +65,11 @@ Design Design::condense(Design &input){
         input.lot += 23;
     }
     return input;
+}
+
+int Design::distBetween(Design x, Design y){
+    int littleDistance = 1;
+    int lotDistance = 7;
+    int heapDistance = 161;
+    
 }

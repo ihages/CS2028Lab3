@@ -24,6 +24,7 @@ int main() {
 	std::cout << "d2:" << std::endl;
 	Design d2(littleInput, lotInput, heapInput);
 	d2.print();
+	
 	/*
 	littleInput = 0;
 	lotInput = 0;
@@ -32,6 +33,8 @@ int main() {
     std::cout << "Enter the number of littles: " << std::endl;
 	std::cin >> littleInput;
 	*/
+
+	/* None of this currently works, need to be able to set to string
 	std::cout << "d3:" << std::endl;
 	Design d3(littleInput+1,lotInput,heapInput+1);
 	d3.print();
@@ -49,7 +52,7 @@ int main() {
 	d4.print();
 
 	std::cout << "Dividing d2 and d3" << std::endl;
-	d4 = d3 / d2;
+	(d3 / d2).print();
 	d4.print();
 
 	std::cout << "Comparing d2 and d3" << std::endl;
@@ -57,7 +60,7 @@ int main() {
 
 	//std::cout << "Coverting d2 to a string" << std::endl;
 	//std::cout << d2 << std::endl;
-	
+	*/	
 
     return 0;
 } // main closer
