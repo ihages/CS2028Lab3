@@ -49,17 +49,10 @@ bool Design::operator==(Design right) {
     }
 }
 
+//needs to be a funtion in design.h because then we can consider
+//right as an int rather than Design
 std::string Design::operator<<(Design right) {
-    if (little == right.little) {
-        return std::to_string(little);
-    }
-    else if (lot == right.lot) {
-        return std::to_string(lot);
-    }
-    else if (heap == right.heap) {
-        return std::to_string(heap);
-    }
-    return ("");
+    return toString(right);
 }
 
 Design Design::condense(Design &input){
