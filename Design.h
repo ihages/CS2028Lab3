@@ -68,6 +68,12 @@ public:
 		std::cout << "Heaps: " << heap << std::endl;
 	}
 
+	template <class T> //template just so the input can be doubles or ints depending on how the project goes
+	std::string toString(T input) {
+		std::string str = to_string(input);
+		return str;
+	}
+
 	//Operator Overloads
 	Design operator+(Design right);
 	Design operator-(Design right);
