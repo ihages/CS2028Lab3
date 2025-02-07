@@ -40,18 +40,9 @@ bool Design::operator==(const Design &right) {
         return false;
     }
 }
-/*
+
 std::string Design::operator<<(Design right) {
-    if (little == right.little) {
-        return std::to_string(little);
-    }
-    else if (lot == right.lot) {
-        return std::to_string(lot);
-    }
-    else if (heap == right.heap) {
-        return std::to_string(heap);
-    }
-    return ("");
+    return toString(right);
 }
 */
 
