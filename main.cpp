@@ -24,7 +24,7 @@ int main() {
 	std::cout << "d2:" << std::endl;
 	Design d2(littleInput, lotInput, heapInput);
 	d2.print();
-	
+
 	/*
 	littleInput = 0;
 	lotInput = 0;
@@ -34,33 +34,34 @@ int main() {
 	std::cin >> littleInput;
 	*/
 
-	/* None of this currently works, need to be able to set to string
+	
 	std::cout << "d3:" << std::endl;
 	Design d3(littleInput+1,lotInput,heapInput+1);
 	d3.print();
 
-	std::cout << "Adding d2 and d3" << std::endl;
-	Design d4 = d2 + d3;
-	d4.print();
 
+	
+	std::cout << "Adding d2 and d3" << std::endl;
+	d2 + d3;
+	d2.print();
+/*	Needs to be updated
 	std::cout << "Subtacting d2 and d3" << std::endl;
-	d4 = d2 - d3;
-	d4.print();
+	d2 - d3;
+	d2.print();
 
 	std::cout << "Multiplying d2 and d3" << std::endl;
-	d4 = d2 * d3;
-	d4.print();
+	d2 * d3;
+	d2.print();
 
 	std::cout << "Dividing d2 and d3" << std::endl;
-	(d3 / d2).print();
-	d4.print();
+	d2 / d3;
+	d2.print();
 
 	std::cout << "Comparing d2 and d3" << std::endl;
 	std::cout << (d2 == d3) << std::endl;
-
+*/
 	//std::cout << "Coverting d2 to a string" << std::endl;
 	//std::cout << d2 << std::endl;
-	*/	
 
     return 0;
 } // main closer

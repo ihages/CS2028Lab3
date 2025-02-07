@@ -2,30 +2,38 @@
 #include <iostream>
 #include <string>
 
-void Design::operator+(Design right){
+void Design::operator+(const Design &right){
     this->little += right.little;
     this->lot += right.lot;
     this->heap += right.heap;
+    Design result(*this);
+    result.condense(result);
 }
 
-void Design::operator-(Design right){
+void Design::operator-(const Design &right){
     this->little -= right.little;
     this->lot -= right.lot;
     this->heap -= right.heap;
+    Design result(*this);
+    result.condense(result);
 }
-void Design::operator*(Design right) {
+void Design::operator*(const Design &right) {
     this->little *= right.little;
     this->lot *= right.lot;
     this->heap *= right.heap;
+    Design result(*this);
+    result.condense(result);
 }
 
-void Design::operator/(Design right) {
+void Design::operator/(const Design &right) {
     this->little /= right.little;
     this->lot /= right.lot;
     this->heap /= right.heap;
+    Design result(*this);
+    result.condense(result);
 }
 
-bool Design::operator==(Design right) {
+bool Design::operator==(const Design &right) {
     if ((little == right.little) && (lot == right.lot) && (heap == right.heap)){
         return true;
     } else {
@@ -47,7 +55,7 @@ std::string Design::operator<<(Design right) {
 }
 */
 
-Design Design::condense(Design &input){
+void Design::condense(Design &input){
     if (input.little >= 7) {
         input.lot += input.little / 7;
         input.little /= 7;
@@ -64,12 +72,11 @@ Design Design::condense(Design &input){
         input.heap -= 1;
         input.lot += 23;
     }
-    return input;
 }
 
 int Design::distBetween(Design x, Design y){
     int littleDistance = 1;
     int lotDistance = 7;
     int heapDistance = 161;
-    
+    return -1;
 }

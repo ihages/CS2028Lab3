@@ -70,17 +70,17 @@ public:
 
 	//Operator Overloads
 	//Should overload so you can do x + y not x = y + z
-	void operator+(Design right);
-	void operator-(Design right);
-	void operator*(Design right);
-	void operator/(Design right);
-	bool operator==(Design right);
+	void operator+(const Design &right);
+	void operator-(const Design &right);
+	void operator*(const Design &right);
+	void operator/(const Design &right);
+	bool operator==(const Design &right);
 	//cout << x; 
 	// "You have 10 heaps, 4 littles, 5 lots"
 	//std::string operator<<(Design right);
 
 	//functions
-	Design condense(Design &input);
+	void condense(Design &input);
 	int distBetween(Design x, Design y);
 	//create a function that outputs the distance between 2 points for example in meters
 };	
