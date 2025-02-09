@@ -77,3 +77,12 @@ int Design::distBetween(Design x, Design y){
     int heapDistance = 161;
     return -1;
 }
+
+double Design::meters(Design input) {
+    //assuming one meter is, say, 2 heaps/46 lots/322 littles
+    double meter;
+    meter = static_cast<double>(input.heap) / 2;
+    meter += static_cast<double>(input.lot) / 46;
+    meter += static_cast<double>(input.little) / 322;
+    return meter;
+}
