@@ -89,6 +89,8 @@ public:
 	void condense(Design &input);
 	int distBetween(Design x, Design y);
 	//create a function that outputs the distance between 2 points for example in meters
+	double meters(Design input);
+
 };	
 
 
