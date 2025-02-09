@@ -35,7 +35,7 @@ int main() {
 		int opPrompt{ 0 };
 
 		std::cout << "\nWhat opperation do you want to do?" << std::endl;
-		std::cout << "1. add\n2. subtract\n3. multiply\n4. divide\n5. compare\n6. print\n" << std::endl;
+		std::cout << "1. add\n2. subtract\n3. multiply\n4. divide\n5. compare\n6. print\n7. convert to meters" << std::endl;
 
 		std::cin >> opPrompt;
 		std::cout << std::endl;
@@ -133,6 +133,9 @@ int main() {
 			std::cout << "\nCoverting x to a string" << std::endl;
 			x.print();
 			//std::cout << x << std::endl;
+		}
+		else if(opPrompt== 7){
+			std::cout << "\nx in meters is " << std::fixed<<std::setprecision(5) << x.meters(x) << " meters." << std::endl;
 		}
 		else {
 			std::cout << "Invalid Opperation";
