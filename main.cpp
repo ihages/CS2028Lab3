@@ -2,64 +2,79 @@
 #include "Design.h"
 
 int main() {
-	std::cout << "When running the function with no parameters," << std::endl;
-	Design d1;
-	d1.print();
-
-	/*****
-	* changes after implementation to design.h: 
-	* put constructors in main rather than design.h
-	*****/
-
 
 	int littleInput;
 	int lotInput;
 	int heapInput;
 	
-	std::cout << "enter the number of littles, lots, and heaps" << std::endl;
+	std::cout << "Enter the number of littles, lots, and heaps for x" << std::endl;
+	std::cout << "Littles: ";
 	std::cin >> littleInput;
+	std::cout << "Lots: ";
 	std::cin >> lotInput;
+	std::cout << "Heaps: ";
 	std::cin >> heapInput;
 
-	std::cout << "d2:" << std::endl;
-	Design d2(littleInput, lotInput, heapInput);
-	d2.print();
+	//std::cout << "\nx:" << std::endl;
+	Design x(littleInput, lotInput, heapInput);
+	//x.print();
 
-	/*
-	littleInput = 0;
-	lotInput = 0;
-	heapInput = 0;
-    
-    std::cout << "Enter the number of littles: " << std::endl;
+	std::cout << "\nEnter the number of littles, lots, and heaps for y" << std::endl;
+	std::cout << "Littles: ";
 	std::cin >> littleInput;
-	*/
+	std::cout << "Lots: ";
+	std::cin >> lotInput;
+	std::cout << "Heaps: ";
+	std::cin >> heapInput;
 
+	//std::cout << "\ny:" << std::endl;
+	Design y(littleInput, lotInput, heapInput);
+	//y.print();
 	
-	std::cout << "d3:" << std::endl;
-	Design d3(littleInput+1,lotInput,heapInput+1);
-	d3.print();
+		int opPrompt{ 0 };
 
-	std::cout << "Adding d2 and d3" << std::endl;
-	d2 + d3;
-	d2.print();
-/*	Needs to be updated
-	std::cout << "Subtacting d2 and d3" << std::endl;
-	d2 - d3;
-	d2.print();
+	std::cout << "\nWhat opperation do you want to do?" << std::endl;
+	std::cout << "1. add\n2. subtract\n3. multiply\n4. divide\n5. compare\n6. print\n" << std::endl;
 
-	std::cout << "Multiplying d2 and d3" << std::endl;
-	d2 * d3;
-	d2.print();
+	std::cin >> opPrompt;
+	std::cout << std::endl;
 
-	std::cout << "Dividing d2 and d3" << std::endl;
-	d2 / d3;
-	d2.print();
-
-	std::cout << "Comparing d2 and d3" << std::endl;
-	std::cout << (d2 == d3) << std::endl;
-*/
-	//std::cout << "Coverting d2 to a string" << std::endl;
-	//std::cout << d2 << std::endl;
+	if (opPrompt == 1) {
+		std::cout << "Adding x and y" << std::endl;
+		x + y;
+		x.print();
+	}
+	else if (opPrompt == 2) {
+		std::cout << "Subtacting x by y" << std::endl;
+		x - y;
+		x.print();
+	}
+	else if (opPrompt == 3) {
+		std::cout << "Multiplying x and y" << std::endl;
+		x* y;
+		x.print();
+	}
+	else if (opPrompt == 4) {
+		std::cout << "Dividing x by y" << std::endl;
+		x / y;
+		x.print();
+	}
+	else if (opPrompt == 5) {
+		std::cout << "Comparing x and y" << std::endl;
+		if (x == y) {
+			std::cout << "The two positions are the same" << std::endl;
+		}
+		else {
+			std::cout << "The two positions are not the same" << std::endl;
+		}
+	}
+	else if (opPrompt == 6) {
+		//std::cout << "Coverting x and y to a string" << std::endl;
+		//std::cout << x << std::endl;
+	}
+	else {
+		std::cout << "Invalid Opperation";
+	}
 
     return 0;
 } // main closer
