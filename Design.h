@@ -57,8 +57,6 @@ public:
 		lot = 0;
 		heap = 0;
 	}
-		//only little
-		//set little
 	
 
 	//print function
@@ -81,16 +79,15 @@ public:
 	void operator*(const Design &right);
 	void operator/(const Design &right);
 	bool operator==(const Design &right);
-	//cout << x; 
-	// "You have 10 heaps, 4 littles, 5 lots"
-	//std::string operator<<(Design right);
+
+	//got help from:
+	//https://stackoverflow.com/questions/476272/how-can-i-properly-overload-the-operator-for-an-ostream
+	friend std::ostream& operator<<(std::ostream &stream,const Design &right);
 
 	//functions
 	void condense(Design &input);
-	int distBetween(Design x, Design y);
-	//create a function that outputs the distance between 2 points for example in meters
+	double distBetween(Design x, Design y);
 	double meters(Design input);
-
 };	
 
 

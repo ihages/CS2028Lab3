@@ -1,6 +1,7 @@
 #include "Design.h"
 #include <iostream>
 #include <string>
+#include <cmath>
 
 void Design::operator+(const Design &right){
     this->little += right.little;
@@ -36,11 +37,15 @@ bool Design::operator==(const Design &right) {
         return false;
     }
 }
-/*
-std::string Design::operator<<(Design right) {
-    return toString(right);
+
+//got help from:
+//https://stackoverflow.com/questions/476272/how-can-i-properly-overload-the-operator-for-an-ostream
+std::ostream& operator<<(std::ostream& stream, const Design &right){
+    stream << "Little: " << right.little << "\n";
+    stream << "Lot: " << right.lot << "\n";
+    stream << "Heap: " << right.heap;
+    return stream;
 }
-*/
 
 void Design::condense(Design &input){
     if (input.little >= 7) {
@@ -71,11 +76,8 @@ void Design::condense(Design &input){
     }
 }
 
-int Design::distBetween(Design x, Design y){
-    int littleDistance = 1;
-    int lotDistance = 7;
-    int heapDistance = 161;
-    return -1;
+double Design::distBetween(Design x, Design y){
+    return abs(x.meters(x) - y.meters(y));
 }
 
 double Design::meters(Design input) {
