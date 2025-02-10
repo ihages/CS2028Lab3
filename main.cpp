@@ -3,17 +3,6 @@
 #include "Design.h"
 
 int main() {
-	
-
-	/*****
-	* std::cout << "When running the function with no parameters," << std::endl;
-	* Design d1;
-	* d1.print();
-	* 
-	* changes after implementation to design.h: 
-	* put constructors in main rather than design.h
-	*****/
-
 	int littleInput;
 	int lotInput;
 	int heapInput;
